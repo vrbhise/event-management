@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Competition Registration</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+<div class="container">
+    <h2>Coding Competition Registration</h2>
+    <form id="codingCompetitionForm" action="php/coding.php" method="POST">
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact:</label>
+            <input type="tel" id="contact" name="contact" required>
+        </div>
+        <div class="form-group">
+            <label for="team_size">Number of Team Members (min 2, max 6):</label>
+            <select id="team_size" name="team_size" onchange="generateTeamMemberFields()" required>
+                <option value="">Select Team Size</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+        </div>
+        <div id="teamMembersContainer"></div>
+
+        <div class="form-group">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<script src="js/coding.js"></script> <!-- Link to your JS file -->
+
+</body>
+</html>

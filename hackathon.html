@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/hackathon.js" defer></script>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Hackathon Registration Form</h1>
+        <form id="hackathonForm" action="php/register_hackathon.php" method="POST">
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Contact Number -->
+            <div class="form-group">
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" pattern="[0-9]{10}" placeholder="10-digit number" required>
+            </div>
+
+            <!-- Number of Team Members -->
+            <div class="form-group">
+                <label for="team_size">Number of Team Members (2-6):</label>
+                <input type="number" id="team_size" name="team_size" min="2" max="6" value="2" required>
+            </div>
+
+            <!-- Team Member Names (dynamically generated) -->
+            <div id="team_members_container">
+                <div class="form-group">
+                    <label for="team_member_1">Team Member 1 Name:</label>
+                    <input type="text" id="team_member_1" name="team_member_1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="team_member_2">Team Member 2 Name:</label>
+                    <input type="text" id="team_member_2" name="team_member_2" required>
+                </div>
+            </div>
+
+            <!-- Problem Statement -->
+            <div class="form-group">
+                <label for="problem_statement">Problem Statement:</label>
+                <textarea id="problem_statement" name="problem_statement" rows="4" required></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
